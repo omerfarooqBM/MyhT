@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  
+  
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCyLd_0gLCGIDGa4j_VnsB-M0bnKa5Jw0w",
+      authDomain: "omertable.firebaseapp.com",
+      databaseURL: "https://omertable-default-rtdb.firebaseio.com",
+      projectId: "omertable",
+      storageBucket: "omertable.appspot.com",
+      messagingSenderId: "706720615374",
+      appId: "1:706720615374:web:79ca0d43c8bf6bb090399f",
+      measurementId: "G-NRQWF06MS5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  
+
+
+  <title>CART</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+</head>
+
+<body class="sub_page">
+   
+
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+          
+            
+          
+    
+
+            <div class="contact_nav1">
+              <a href="userhome.html">
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+                <span>
+                  FOOD BAY
+                </span>
+              </a>
+            
+            </div>
+
+       
+            </div>
+
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="cart.html">
+              
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>
+              CART
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link" href="userhome.html">Home <span class="sr-only">(current)</span></a>
+                </li>  
+                <li class="nav-item">
+                  <a class="nav-link" href="food.html">Food Items</a>
+                </li>
+                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  
+
+  <table class = "table mt-4" border = "1" id="cartProducts">   <tr>
+    <th>Device Name:</th>
+    <th>Price:</th>
+    <th>Status: </th> 
+    
+    </tr>
+</table>
+
+<table class = "table mt-4" border = "1">
+  <tr>
+    <th>Total:</th>
+    <th id="price">0</th>
+  </tr>
+</table>
+  
+<div class="btns">
+ 
+  <button class="btn btn-success mt-3" id="buy" onclick="buy()"> Buy</button>
+  <button class="btn btn-danger mt-3" id="remove" onclick="remove()">Remove</button>      
+
+</div>
+
+
+
+
+    
+  <section class="info_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  FOOD BAY
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              SMIT Bahadurabad
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              (021) 111 729 526
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              smit@gmail.com
+            </p>
+          </div>
+        </div>
+       
+        <div class="col-md-6">
+          <div class="info_links">
+            <h5>
+              Useful Links:
+            </h5>
+            <ul>
+              <li>
+                <a href="userhome.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="food.html">
+                  Food Items
+                </a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+
+
+
+
+       
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+       
+
+        <a href="userhome.html">  <i class="fas fa-utensils"> &nbsp;</i> FOOD BAY</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+ 
+ 
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>

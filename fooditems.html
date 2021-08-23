@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="../assests/ResturantImage.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Products</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD10OtWZPG0Z5E6WQ5rV8AycehoboyQ7rk",
+            authDomain: "food-bay-a2b1f.firebaseapp.com",
+            projectId: "food-bay-a2b1f",
+            storageBucket: "food-bay-a2b1f.appspot.com",
+            messagingSenderId: "1005408743830",
+            appId: "1:1005408743830:web:79b2ff30bb874c89faadb7",
+            measurementId: "G-B8HKVSG84V"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+</head>
+
+<body class="sub_page">
+
+
+    <div class="hero_area">
+        <header class="header_section">
+            <div class="header_top">
+                <div class="container-fluid">
+                    <div class="top_nav_container">
+
+
+
+
+
+                        <div class="contact_nav1">
+                            <a href="userhome.html">
+
+                                <span>
+                                    Food Goat
+                                </span>
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="header_bottom">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand" href="cart.html">
+                            <div id="cart-badge" class="cart-badge">
+                                0
+                            </div>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span id="webStore">
+                                Welcome!
+                            </span>
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ">
+                              <li class="nav-item active">
+                                <a class="nav-link" href="flybuy.html">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="fooditems.html">Food Items</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="usersignup.html">User Signup</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="fooditems.html">User Login</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="buyersignup.html">Rest Sign up</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="buyersignin.html">Rest Login</a>
+                              </li>
+              
+                              
+                              
+                            </ul>
+                          </div>
+
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+
+        <div class="container mt-5">
+            <div class="heading_container heading_center">
+                <h2>
+                    Restaurant Categories:
+                </h2>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+
+
+
+
+
+            <div class="card card-bo mt-3 mb-4">
+                <img src="img/meat.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" id="productName">
+                        <script>let productName = document.getElementById('productName');
+                            productName.innerHTML = `${localStorage.getItem('Restaurantname')}`
+                        </script>
+                    </h5>
+
+                    <button onclick="change()" class="btn btn-warning">Visit</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <section class="info_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info_contact">
+                            <h5>
+                                <a href="" class="navbar-brand">
+                                    <span>
+                                        FOOD Goat
+                                    </span>
+                                </a>
+                            </h5>
+                            <p>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                SMIT Bahadurabad
+                            </p>
+                            <p>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                (021) 111 729 526
+                            </p>
+                            <p>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                smit@gmail.com
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="info_links">
+                            <h5>
+                                Useful Links:
+                            </h5>
+                            <ul>
+                                <li>
+                                    <a href="userhome.html">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about.html">
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="fooditems.html">
+                                        food Items
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer_section">
+            <div class="container">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+
+
+                    <a href="userhome.html"> Food Goat</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="food.js"></script>
+
+</body>
+
+</html>
